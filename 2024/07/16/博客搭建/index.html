@@ -1,0 +1,674 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>博客搭建 | Emma</title><meta name="author" content="Emma"><meta name="copyright" content="Emma"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="准备工作 安装Git https:&#x2F;&#x2F;git-scm.com&#x2F; 安装Node.js https:&#x2F;&#x2F;nodejs.org&#x2F;en 选择LTS版本 安装教程： Node.js安装及环境配置超详细教程【Windows系统】_windows 安装nodejs-CSDN博客 配置Github仓库 新建仓库为username.github.io username即为自己github上的用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客搭建">
+<meta property="og:url" content="http://example.com/2024/07/16/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:site_name" content="Emma">
+<meta property="og:description" content="准备工作 安装Git https:&#x2F;&#x2F;git-scm.com&#x2F; 安装Node.js https:&#x2F;&#x2F;nodejs.org&#x2F;en 选择LTS版本 安装教程： Node.js安装及环境配置超详细教程【Windows系统】_windows 安装nodejs-CSDN博客 配置Github仓库 新建仓库为username.github.io username即为自己github上的用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/logo.jpg">
+<meta property="article:published_time" content="2024-07-16T13:14:48.000Z">
+<meta property="article:modified_time" content="2024-08-29T12:40:32.080Z">
+<meta property="article:author" content="Emma">
+<meta property="article:tag" content="学习笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/logo.jpg"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/safeimagekit-logo.jpg"><link rel="canonical" href="http://example.com/2024/07/16/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '博客搭建',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-29 20:40:32'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/attachments/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/icon.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/logo.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Emma"><span class="site-name">Emma</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">博客搭建</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-16T13:14:48.000Z" title="发表于 2024-07-16 21:14:48">2024-07-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-29T12:40:32.080Z" title="更新于 2024-08-29 20:40:32">2024-08-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="博客搭建"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="准备工作">准备工作</h1>
+<h2 id="安装git">安装Git</h2>
+<p><a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a></p>
+<h2 id="安装node.js">安装Node.js</h2>
+<p><a target="_blank" rel="noopener" href="https://nodejs.org/en">https://nodejs.org/en</a></p>
+<p>选择LTS版本</p>
+<p>安装教程：</p>
+<p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/Nicolecocol/article/details/136788200">Node.js安装及环境配置超详细教程【Windows系统】_windows
+安装nodejs-CSDN博客</a></p>
+<h2 id="配置github仓库">配置Github仓库</h2>
+<p>新建仓库为username.github.io</p>
+<p>username即为自己github上的用户名</p>
+<p>Emmaaaaaaaaaaaaaaaaa.github.io</p>
+<p><del>每次打这一连串的a真是想死，心里还得数着a的数量是不是对的</del></p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240716212629650.png" /></p>
+<p>之后点击creat repository即可</p>
+<h2 id="配置ssh-key">配置SSH Key</h2>
+<p>首先点击电脑右键打开GitBash</p>
+<h3 id="配置github账号信息">配置Github账号信息</h3>
+<p>按如下方式设置用户名和GitHub绑定的邮箱</p>
+<h3 id="生成shh-key">生成SHH Key</h3>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240716213026702.png" /></p>
+<p>输入：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+<p>之后会生成一个文件夹，记事本打开该文件夹生成的id_rsa.pub文件，复制里面的内容</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240716213551805.png" /></p>
+<h3 id="添加ssh-key">添加SSH Key</h3>
+<p>在GitHub上点击头像 ---&gt; 点击Settings ---&gt; 点击SSH and GPG keys
+---&gt; 点击New SSH key</p>
+<p>把复制的东西放进去后点击Add SSH key</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240716214232367.png" /></p>
+<h1 id="建站">建站</h1>
+<p>首先创建一个文件夹（我的命名为GHblog）</p>
+<p>打开GitBash后cd D:</p>
+<h2 id="安装hexo">安装Hexo</h2>
+<p>使用命令安装hexo</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h2 id="初始化">初始化</h2>
+<p>输入命令</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<p>可以看到该文件夹下面出现了很多东西</p>
+<h2 id="安装相关依赖">安装相关依赖</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h2 id="生成静态网页">生成静态网页</h2>
+<p>输入命令</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<h2 id="打开本地服务器进行预览">打开本地服务器进行预览</h2>
+<p>输入命令</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>浏览器打开<a
+target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>即可</p>
+<h3 id="运行准备">运行准备</h3>
+<p>用vscode打开该文件夹</p>
+<p>打开_config.yml文件 翻到最下方进行如下设置</p>
+<p>这里repo的链接是 https://github.com/用户名/仓库名.git</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240716220113258.png" /></p>
+<h3 id="博客配置">博客配置</h3>
+<p>配置博客作者的相关信息</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240716222224247.png" /></p>
+<h3 id="安装插件">安装插件</h3>
+<p>输入命令安装deployer插件</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-depolyer-git <span class="attr">--save</span></span><br></pre></td></tr></table></figure>
+<h3 id="最后">最后</h3>
+<p>输入命令</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo <span class="selector-tag">g</span> &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<p>最后出现Deploy done: git则说明上传成功</p>
+<p>此时GitHub仓库已经加载文件，等待一会后即可查看网页</p>
+<h1 id="常用命令">常用命令</h1>
+<h2 id="生成静态网页-1">生成静态网页</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<h2 id="启动本地服务器并预览网站">启动本地服务器并预览网站</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br><span class="line"><span class="comment"># or </span></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<h2 id="清除缓存文件">清除缓存文件</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<h2 id="新建一篇文章">新建一篇文章</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;title&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="删除一篇已经发布的文章">删除一篇已经发布的文章</h2>
+<ol type="1">
+<li>删除文件夹<code>source/_posts</code>下目标文章markdown文件</li>
+<li>删除<code>.deploy_git</code>文件夹</li>
+<li>执行<code>hexo clean</code>后，再执行<code>hexo g &amp;&amp; hexo d</code>
+即可</li>
+</ol>
+<blockquote>
+<p>原因分析：</p>
+<p>因为在本地在执行hexo
+g后，会在博客根目录下生成一个public文件夹，这个文件夹里的文件组合起来就是一个完整的静态博客。</p>
+<p>接着如果执行hexo
+d，就会把这个public文件夹的东西完完整整地拷贝到.deploy_git文件夹里，并把该文件夹里的所有文件全部推送push到远程库。</p>
+<p>xxxxxxxxxx43 1from itertools import product2from Crypto.Util.Padding
+import pad3from hashlib import <em>4from Crypto.Util.number import
+</em>5from tqdm import tqdm6​7p, q, g, y =
+(156169498993837300941969389078565637464689185713213578550979549862042014984607,
+78084749496918650470984694539282818732344592856606789275489774931021007492303,
+2,
+59080272611010540206200716660225398487916425104605746321153704646003914371135)8message
+= ['SDSSDASSAAASSDADSASADASSSSADDS', 'SADADDAASSAASDSAAAAADS',
+'SSASDDDSSSSDDSDAAAAAASAASDSA', 'SASSDSDSSSDSSDSDASADDA',
+'SDDAAASASADDAADDSSSSDASAASADSA', 'AASADASADDSDDASADSAS',
+'DASDDDDAASADDASADAAAAAADS', 'DSAAAASASDDDDDDSSASDADSASDDA',
+'ADSSSSAADDSDDDADAADD', 'ASDDSADAASSASSDSDDSSD',
+'SASSDDAASDDSADSDSSDAASSAD', 'DADSDAASAADDAAASASSSA',
+'DADDADSSDADAADSSADDADDDSSDAS', 'AAASDSSDSAASDADDSADSDA',
+'ASDASSDSDDADADSDSDDDDADSSAADAS', 'SDSASDADDASDASSDSAAASSASSDADA',
+'AADDSSDSDADSASDDSASSDDD', 'SAADASAADAASDDDSASSDAASAAAS',
+'SSDDADSAADSDSSADSADSAASASDSAS', 'DSDDAAASDDDSAASSDDDAASADSS',
+'SASSAAAAAAADSDASSDASSDAS', 'DDDASAASDAADSSSASAAAADSDD',
+'SASADSSSAADDASADDDADD', 'ASDDDDSDDSSSAASASDSSDDASA',
+'DSAASDSDAADAAAAASADSDDDDAAA', 'ADSDADDDASASDSDADSADADDSASSSD',
+'ADADDASSDSDASADDSADSD', 'SASAASDSDDASADASSSDSAAA',
+'SASDDADSSDASDDSSDSDA', 'ADAASDSSDSDASSASADDSDDASAS',
+'AADADDSAADDDSASADASSDAADADAA']9r =
+[59254487398967388114905667045028363843329923626238494813205814542210325221866,
+7272091585909282735283006759301331954064261183899338079418296410637263888770,
+6899645492048427857621143178962093646174799398991863666101058693217698732368,
+25004120896291255053237639070744331951278481119827357255754648579794346195560,
+2970680424634969125510981613739745658897845410407912521400879068659540408508,
+54566000630497640561512172245143554745650114820675965968691149808463168361994,
+75159685495692974866291952764676724718763580667689472941977359299782008334398,
+20041025052466338500977838626769109456575569706600589389016534358968746705758,
+70127192435034402135747706941502224672808592757766109942714487474501491910214,
+9691674719110233709152049443866537766465800386755314400120771762265195237696,
+71705536377844454384479609516094364197930343317149881589774662842233960882414,
+52879693221782582945807231749976747516107564896599455986464226581743117039645,
+77382790022991362370508965243223326049308313776687214599186184000848696471646,
+56346141869522955969887972614456267251604757060687228073793419107933969328162,
+13673786393914569132256858604647869957632869873889606981549833789272316263013,
+64767740468987944636292946852714160626094908713011502873333251460983428727987,
+3957421961183318932163297455146838208380750250268324980567615749312524020603,
+26427922029900012253901950242265848521558605010629901777129266992870754082725,
+41377529326816743042387061355650636824586430044255853849728865473372840135697,
+25716607607446503241765016815241812755718791371526314953930748513731536667770,
+19800391798756020076641438144957219387739406397111495660920822320302304854123,
+38726290839677684687529233274549282905118675478275260942535144771737271586397,
+39209612764454560795450300186392582769693156243512973558204034254768849812055,
+65513712517147774905818288938959930101260466094015953149923879872714745367445,
+15729001560566023616632342669016214191974988848807788455841465085832368458445,
+42181696175119369852613642818168055609726913997313538977450877772345284116500,
+66136301537002842836817588252827389434354772150463143258637074246966542574050,
+28759447425094984124057238672075080352158483766211322160596339820824930247130,
+46713611880672324334213026166944979498146683097425440783760089321619754080806,
+57079205189933243387798430767693634017842334556643904914267966016857671112460,
+10688647176294432598580110142909961685073598720504815121442568862023227643325]10s
+=
+[38134152657262330507433713437784426184950965354807113354631630191330303144120,
+25499964678151126566605578540840513489434638253159604087981425065951344757164,
+9791582686238213337967141368906212036310014918808878260483336268832064128819,
+141512006531073436448016797005260994098008785866923890662245540709534244927,
+21793011307831199247000930716490000926029175766326909085969585420590222327264,
+14349862994826483344159692458388566295460798903541941504424537018216650283613,
+70458140884809949567915541063312538538372757595177423386408938073672211639375,
+65530083011107720400920780939345704754954869671333734672594688826098321351660,
+57063474646503909216126596725677068514339517777473453937098665282959018241139,
+62093763551744197212031574855244002702924782008725363963219173846480120194830,
+77374603032347186343803094100249733360600621594214414598796066240713702791608,
+1344584960351311598238142429846629993914377848692708811135221930719773821079,
+43641233828500431963081402892838426285406919342406723474664571883294369141394,
+76285674574149814839616688665569434237657824816977670694242559140508233840268,
+55327829510120473782794486945583818434703312785066895788282945944551470490709,
+13259490361346409766866273875042192439139048727072955549892484859673179719539,
+26882140137481455957383933013829466811327529673163422516945649296787438630196,
+69951840114040217998552588969628162605092507207522992695398095063314527794456,
+11219359019456290145545276763003725218855047474525360923001515509608652449000,
+28453782213087434330094261632474010077787574243224303728751260500450723227337,
+45451686690348328576376896082606976500453603983712180502700202971927238065259,
+40829316203033016996956478373044348905634931325393076578307296318880401948880,
+1354495451811853700039180690705948597695565424847801455594169929311025313998,
+15372704507991354781967074099137226451034611060413049367266363154832614415805,
+16327134664007312833089147621817036851276111964898734022794700122827444854947,
+9844926061501886811803369928846120575402269452312877926396348651872911440254,
+40179237579762663098604891208246052072476264271372972425562554108399403298795,
+31809179023991813094371890170356817265600467849999331763205655801654108159032,
+23270114877894114090584274918755188867365261145736710892185678426446455871613,
+18247249527866143497935092319901700668290600772967638096649240924154901762810,
+54331697420125697460151875535555752680845260504979536685075170636565355173106]11​12M
+= matrix(ZZ,33,31)13khigh = [''.join(bytes) for bytes in product("DAS",
+repeat=2)]14tmp_1 = matrix.identity(31 + 1)15tmp_1[-1, -1] = 256 **
+3016tmp_q = matrix.identity(31 - 1)17tmp_q <em>= q18tmp_0 =
+matrix.zero(31 - 1, 31 + 1)19M = tmp_1.stack(tmp_0)20​21A = matrix(ZZ, 31
++ 1, 31 - 1)22h0 = int(sha256(pad(message[0].encode(), 32)).hexdigest(),
+16)23for kh in tqdm(khigh):24    print(kh)25    k0h =
+bytes_to_long(bytes([a ^^ b for a, b in zip(kh.encode(),
+message[0][:2].encode())]))</em> 256 ** 3026    for i in range(1, 31):27
+       hi = int(sha256(pad(message[i].encode(), 32)).hexdigest(), 16)28
+       kih = bytes_to_long(bytes([a ^^ b for a, b in zip(kh.encode(),
+message[i][:2].encode())])) * 256 ** 3029        ci = hi * r[0] - h0 *
+r[i] + s[0] * r[i] * k0h - s[i] * r[0] * kih30        A[0, i - 1] = s[0]
+* r[i] %q31        A[i, i - 1] = s[i] * r[0] %q32        A[-1,i - 1] =
+ci % q33    tmp = A.stack(tmp_q)34    tmp *= 2 ** 25635    MM =
+M.augment(tmp)36    res = MM.LLL()37    k0l = abs(res[0][0])38    k0 =
+k0h + k0l39    key = long_to_bytes(k0 ^^
+bytes_to_long(pad(message[0].encode(),32)))40    if (all(j in b"DAS" for
+j in key)):41        print(key)42        break43#
+AADDAASAAASSSASSDSSASSDDDSDAAASSpython</p>
+<p>markdown文章在之前的hexo
+g之后，把生成的静态文件拷贝到了.deploy_git文件，但hexo
+clean并没能删除·.deploy_git·里的markdown的静态文件，所以每次部署的时候，它还会冒出来。</p>
+<p>所以同时删掉.deploy_git文件夹即可。</p>
+</blockquote>
+<h1 id="安装和美化bufferfly主题">安装和美化Bufferfly主题</h1>
+<h2 id="安装">安装</h2>
+<ol type="1">
+<li><p>打开GitBash使用命令安装</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure></li>
+<li><p>下载pug以及stylus的渲染器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure></li>
+<li><p>设置默认主题</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240716221313385.png" /></p></li>
+</ol>
+<h2 id="美化">美化</h2>
+<h3 id="添加博客的page">添加博客的page</h3>
+<p>直接在vscode中打开终端运行</p>
+<h4 id="新建标签tags页面">新建标签tags页面</h4>
+<p>输入命令</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
+<p>打开文件夹进行如下修改</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240716222848270.png" /></p>
+<h4 id="新建分类categories页面">新建分类categories页面</h4>
+<p>输入命令</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;categories&quot;</span><br></pre></td></tr></table></figure>
+<p>打开文件夹进行如下修改</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240716223035149.png" /></p>
+<h4 id="新建关于about页面">新建关于about页面</h4>
+<p>输入命令</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;about&quot;</span><br></pre></td></tr></table></figure>
+<p>打开文件夹进行如下修改</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240716223155909.png" /></p>
+<h4 id="新建友链-link-页面">新建友链 link 页面</h4>
+<p>输入命令</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;link&quot;</span><br></pre></td></tr></table></figure>
+<p>打开文件夹进行如下修改</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240716223317861.png" /></p>
+<h4 id="创建友链内容">创建友链内容</h4>
+<p>在GHblog文件夹中的 source/_data（如果没有 _data
+文件夹，请自行创建），创建一个文件 link.yml</p>
+<p>输入以下内容</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">- class_name: 友情链接</span><br><span class="line">  class_desc: 那些人，那些事</span><br><span class="line">  link_list:</span><br><span class="line">    - name: Hexo</span><br><span class="line">      link: https://hexo.io/zh-tw/</span><br><span class="line">      avatar: https://d33wubrfki0l68.cloudfront.net/<span class="number">6657</span>ba50e702d84afb32fe846bed54fba1a77add/<span class="number">827</span>ae/logo.svg</span><br><span class="line">      descr: 快速、简单且强大的网誌框架</span><br><span class="line"></span><br><span class="line">- class_name: 网站</span><br><span class="line">  class_desc: 值得推荐的网站</span><br><span class="line">  link_list:</span><br><span class="line">    - name: Laohoo @gitee.io</span><br><span class="line">      link: https://hujiyi.gitee.io/</span><br><span class="line">      avatar: https://i.loli.net/<span class="number">2020</span>/<span class="number">05</span>/<span class="number">14</span>/<span class="number">9</span>ZkGg8v3azHJfM1.png</span><br><span class="line">      descr: 博客网站</span><br><span class="line">    - name: Weibo</span><br><span class="line">      link: https://www.weibo.com/</span><br><span class="line">      avatar: https://i.loli.net/<span class="number">2020</span>/<span class="number">05</span>/<span class="number">14</span>/TLJBum386vcnI1P.png</span><br><span class="line">      descr: 中国最大社交分享平台</span><br><span class="line">    - name: Twitter</span><br><span class="line">      link: https://twitter.com/</span><br><span class="line">      avatar: https://i.loli.net/<span class="number">2020</span>/<span class="number">05</span>/<span class="number">14</span>/<span class="number">5</span>VyHPQqR6LWF39a.png</span><br><span class="line">      descr: 社交分享平台</span><br></pre></td></tr></table></figure>
+<h3 id="配置主题">配置主题</h3>
+<p>在HGblog的根目录里创建一个文件
+<code>_config.butterfly.yml</code>，并把主题目录的
+<code>themes/butterfly/_config.yml</code> 内容复制到
+<code>_config.butterfly.yml</code> 去</p>
+<blockquote>
+<p>PS：不要把_config.yml删掉</p>
+<p>PS：以后只需要在config.butterfly.yml中配置就行。如果使用了
+_config.butterfly.yml， 配置主题的 themes/butterfly/config.yml
+将不会有效果。</p>
+<p>PS：Hexo会自动合并主题中的themes/butterfly/config.yml 和
+_config.butterfly.yml
+里的配置，如果存在同名配置，会使用config.butterfly.yml
+的配置，其优先度较高</p>
+</blockquote>
+<h3 id="搜索功能">搜索功能</h3>
+<ol type="1">
+<li><p>安装搜索插件</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-generator-search</span><br></pre></td></tr></table></figure></li>
+<li><p>编辑 <code>_config.butterfly.yml</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Local search</span><br><span class="line">local_search:</span><br><span class="line">  enable: true    # 改为 true</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="字数统计功能">字数统计功能</h3>
+<ol type="1">
+<li><p>安装字数统计插件</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-wordcount</span><br></pre></td></tr></table></figure></li>
+<li><p>编辑 <code>_config.butterfly.yml</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># wordcount (字數統計)</span><br><span class="line">wordcount:</span><br><span class="line">  enable: true    # 改为 true</span><br><span class="line">  post_wordcount: true</span><br><span class="line">  min2read: true</span><br><span class="line">  total_wordcount: true</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="gitalk评论功能">Gitalk评论功能</h3>
+<p>在GitHub上点击头像 ---&gt; 点击Settings ---&gt; 点击Developer
+settings ---&gt; 点击Register a new GitHub App</p>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240717100812782.png"
+alt="image-20240717100812782" />
+<figcaption aria-hidden="true">image-20240717100812782</figcaption>
+</figure>
+<p>完成后会生成相应的 <code>clientID</code> 和
+<code>clientSecret</code></p>
+<p>打开 <code>_config.butterfly.yml</code> , 找到
+<code># Comments System</code>，进行修改如下</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Comments System</span></span><br><span class="line"><span class="comment"># --------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="comment"># Up to two comments system, the first will be shown as default</span></span><br><span class="line">  <span class="comment"># Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk</span></span><br><span class="line">  <span class="attr">use:</span> <span class="comment"># Valine,Disqus</span></span><br><span class="line">   <span class="bullet">-</span> <span class="string">Gitalk</span></span><br><span class="line">  <span class="attr">text:</span> <span class="literal">true</span> <span class="comment"># Display the comment name next to the button</span></span><br><span class="line">  <span class="comment"># lazyload: The comment system will be load when comment element enters the browser&#x27;s viewport.</span></span><br><span class="line">  <span class="comment"># If you set it to true, the comment count will be invalid</span></span><br><span class="line">  <span class="attr">lazyload:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">count:</span> <span class="literal">true</span> <span class="comment"># Display comment count in post&#x27;s top_img</span></span><br><span class="line">  <span class="attr">card_post_count:</span> <span class="literal">true</span> <span class="comment"># Display comment count in Home Page</span></span><br></pre></td></tr></table></figure>
+<p>继续在 <code>_config.butterfly.yml</code>中 , 找到
+<code># gitalk</code>，进行修改如下</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># gitalk</span></span><br><span class="line"><span class="comment"># https://github.com/gitalk/gitalk</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="string">Ov************</span> <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> <span class="string">0e*****************************</span> <span class="comment"># GitHub Application Client Secret</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">blog_comments</span> <span class="comment"># GitHub repository (这里要新建一个仓库)</span></span><br><span class="line">  <span class="attr">owner:</span> <span class="string">Emmaaaaaaaaaaaaaaaaa</span> <span class="comment"># GitHub repository 所有者</span></span><br><span class="line">  <span class="attr">admin:</span> <span class="string">Emmaaaaaaaaaaaaaaaaa</span> <span class="comment"># GitHub repository 的所有者和合作者 (对这个 repository 有写权限的用户)</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">zh-CN</span> <span class="comment"># en, zh-CN, zh-TW, es-ES, fr, ru</span></span><br><span class="line">  <span class="attr">perPage:</span> <span class="number">10</span> <span class="comment"># Pagination size, with maximum 100.</span></span><br><span class="line">  <span class="attr">distractionFreeMode:</span> <span class="literal">false</span> <span class="comment"># Facebook-like distraction free mode.</span></span><br><span class="line">  <span class="attr">pagerDirection:</span> <span class="string">last</span> <span class="comment"># Comment sorting direction, available values are last and first.</span></span><br><span class="line">  <span class="attr">createIssueManually:</span> <span class="literal">false</span> <span class="comment"># Gitalk will create a corresponding github issue for your every single page automatically</span></span><br></pre></td></tr></table></figure>
+<h3 id="字体配置">字体配置</h3>
+<p>我自己用的是霞鹜文楷</p>
+<p>字体下载地址</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/lxgw/LxgwWenKaiGB/releases">Releases ·
+lxgw/LxgwWenkaiGB (github.com)</a></p>
+<p>下载的是下面这个（不过感觉和Light没什么差别，也没有看到加粗效果啊）</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240717081822829.png" /></p>
+<p>下载好之后我们继续来到GHblog文件夹里，这时需要自己建一个<code>css</code>文件，在<code>themes\butterfly\source\css</code>文件夹中新建一个<code>css</code>文件，命名为<code>custom.css</code>（可随意命名）</p>
+<p>往里面放入以下代码（<code>wenkai</code>
+只是别名，可以任意修改，不过引用的时候，要确保名字相同）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&#x27;wenkai&#x27;</span>;</span><br><span class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&#x27;https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/attachments/LXGWWenKaiMonoGBLite-Bold.ttf&#x27;</span>);</span><br><span class="line">    <span class="comment">/* 修改成你的字体 */</span></span><br><span class="line">    <span class="attribute">font-display</span>: swap</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: wenkai <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里利用了<code>jsdelivr</code>的加速方式（该加速方式写在后面，可跳转到最下面）</p>
+<p>最后在<code>_config.butterfly.yml</code>里面进行如下修改</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn<span class="selector-class">.jsdelivr</span><span class="selector-class">.net</span>/gh/Emmaaaaaaaaaaaaaaaaa/attachments/custom<span class="selector-class">.css</span>&quot; media=&quot;defer&quot; onload=&quot;this<span class="selector-class">.media</span>=&#x27;<span class="attribute">all</span>&#x27;&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p><code>href</code>这里也采用<code>jsdelivr</code>加速方式，<code>media="defer" onload="this.media='all'"</code>
+这个只是 css 的异步加载，也可以不写</p>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240717084012664.png"
+alt="image-20240717084012664" />
+<figcaption aria-hidden="true">image-20240717084012664</figcaption>
+</figure>
+<h3 id="代码框">代码框</h3>
+<p>在<code>_config.butterfly.yml</code>找到<code>Code Blocks</code>，有多种模式可以选择，我选的<code>mac</code></p>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240717084353118.png"
+alt="image-20240717084353118" />
+<figcaption aria-hidden="true">image-20240717084353118</figcaption>
+</figure>
+<h3 id="头像修改">头像修改</h3>
+<p>在<code>_config.butterfly.yml</code>进行修改如下</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Avatar (頭像)</span><br><span class="line">avatar:</span><br><span class="line">  img: https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/logo.jpg</span><br><span class="line">  effect: false</span><br></pre></td></tr></table></figure>
+<p>直接用PicGo就行啦</p>
+<h3 id="浏览器头像修改">浏览器头像修改</h3>
+<p>头像图片用在线网站转成32*32像素的即可，然后在<code>_config.butterfly.yml</code>中找到<code>favicon</code>进行修改如下</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">favicon: https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/safeimagekit-logo.jpg</span><br></pre></td></tr></table></figure>
+<p>效果如下</p>
+<p><img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240717092725614.png" /></p>
+<h3 id="背景设置修改">背景设置修改</h3>
+<p>为了不让看起来更简单一些，我把背景关掉了</p>
+<p>在<code>_config.butterfly.yml</code>进行修改如下</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Disable <span class="attribute">all</span> banner <span class="selector-tag">image</span></span><br><span class="line">disable_top_img: true</span><br></pre></td></tr></table></figure>
+<h3 id="社交图标">社交图标</h3>
+<p>在<code>_config.butterfly.yml</code>进行修改如下</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  fab fa-github: https://github.com/Emmaaaaaaaaaaaaaaaaa || Github || <span class="string">&#x27;#24292e&#x27;</span></span><br><span class="line">  fas fa-envelope: mailto: 自己的邮箱号 || Email || <span class="string">&#x27;#4a7dbe&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>效果如下 <img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240717093155018.png"
+alt="image-20240717093155018" /></p>
+<h3 id="字体大小">字体大小</h3>
+<p>感觉字体有点小了，故进行了如下修改 （原来字体大小是14px）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">font</span>:</span><br><span class="line">  global-font-size: <span class="number">15px</span></span><br><span class="line">  code-font-size: <span class="number">14px</span></span><br><span class="line">  font-family:</span><br><span class="line">  code-font-family:</span><br></pre></td></tr></table></figure>
+<h3 id="透明度修改">透明度修改</h3>
+<p>在<code>custom.css</code>中添加如下内容</p>
+<p>设置的透明度越高 页面越不透明</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 文章页背景 */</span></span><br><span class="line"><span class="selector-class">.layout_post</span>&gt;<span class="selector-id">#post</span> &#123;</span><br><span class="line">    <span class="comment">/* 以下代表透明度为0.5 可以自行修改*/</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,.<span class="number">9</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 所有页面背景 */</span></span><br><span class="line"><span class="selector-id">#aside_content</span> <span class="selector-class">.card-widget</span>, <span class="selector-id">#recent-posts</span>&gt;<span class="selector-class">.recent-post-item</span>, <span class="selector-class">.layout_page</span>&gt;<span class="selector-tag">div</span><span class="selector-pseudo">:first-child</span><span class="selector-pseudo">:not</span>(<span class="selector-class">.recent-posts</span>), <span class="selector-class">.layout_post</span>&gt;<span class="selector-id">#page</span>, <span class="selector-class">.layout_post</span>&gt;<span class="selector-id">#post</span>, <span class="selector-class">.read-mode</span> <span class="selector-class">.layout_post</span>&gt;<span class="selector-id">#post</span>&#123;</span><br><span class="line">    <span class="comment">/* 以下代表透明度为0.5 */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,.<span class="number">9</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="jsdelivr和github的结合">jsdelivr和github的结合</h1>
+<h2 id="jsdelivr加速">jsdelivr加速</h2>
+<p>具体操作过程如下 新建一个GitHub仓库，仓库名称自己命名（Repository
+name）</p>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240717082833326.png"
+alt="image-20240717082833326" />
+<figcaption aria-hidden="true">image-20240717082833326</figcaption>
+</figure>
+<p>在这个仓库中上传要CDN的文件，如CSS，JS，图片等</p>
+<p>上传成功后点击<code>Creat a new release</code></p>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240717083216321.png"
+alt="image-20240717083216321" />
+<figcaption aria-hidden="true">image-20240717083216321</figcaption>
+</figure>
+<p>之后输入自定义版本号</p>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240717083409900.png"
+alt="image-20240717083409900" />
+<figcaption aria-hidden="true">image-20240717083409900</figcaption>
+</figure>
+<p>成功之后即可使用<code>jsdelivr</code>来引用资源</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径</span><br><span class="line"># 例如</span><br><span class="line">https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/attachments@<span class="number">1.0</span>/LXGWWenKaiMonoGBLite-Bold.ttf</span><br></pre></td></tr></table></figure>
+<p>如果不需要版本号区分，也可以直接：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/attachments/LXGWWenKaiMonoGBLite-Bold.ttf</span><br></pre></td></tr></table></figure>
+<h2 id="利用jsdelivr搭建图床">利用jsdelivr搭建图床</h2>
+<ol type="1">
+<li><p>再次新建一个仓库，专门用来存放上传的图片</p></li>
+<li><p>在GitHub上点击头像 ---&gt; 点击Settings ---&gt; 点击Developer
+settings ---&gt; 点击Personal access tokens ---&gt; 点击Tokens(classic)
+---&gt; 点击Generate new token ---&gt;</p>
+<p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44786530/article/details/129851540">jsDelivr和Github配合才是最佳免费CDN，五分钟学会使用，附搭建免费图床教程_jsdelivr怎么用-CSDN博客</a></p>
+<p>通过这篇文章来进行配置</p></li>
+<li><p>完成这些步骤后会生成一串token，这串token之后不会再显示，所以第一次看到的时候，可以建个文本文件好好保存，忘记了只有重新生成，每次都不一样</p></li>
+<li><p>PicGo工具的下载和配置</p>
+<p>下载该工具并且安装完成后打开它，设定仓库名按照<code>账户名/仓库名</code>的格式进行填写（这里我又新建了一个仓库，并且命名为<code>blog-img</code>）在该仓库里面我新建了一个<code>image</code>文件夹，所以存储路径那里我是像下面这样设置的</p>
+<p><code>设定token</code>中填写上面生成的那串<code>token</code>即可</p>
+<p><code>设定分支名</code>这里看自己建的仓库里面的分支名是什么（有的人设置的是master，有的人设置的是main，按照对应的填写即可）</p>
+<p><code>自定义域名</code>的作用是在上传图片后成功后，图片上传工具PicGo会将<code>自定义域名+上传的图片名</code>生成相应的访问链接</p>
+<p>为了加速访问，我们将自定义域名设置成下面这种格式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/账户名/仓库名</span><br><span class="line"># 例如</span><br><span class="line">https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img</span><br></pre></td></tr></table></figure>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240717090022465.png"
+alt="image-20240717090022465" />
+<figcaption aria-hidden="true">image-20240717090022465</figcaption>
+</figure>
+<p>修改PicGo设置开启上传提示，这样上传成功后会后提示</p>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240717091027876.png"
+alt="image-20240717091027876" />
+<figcaption aria-hidden="true">image-20240717091027876</figcaption>
+</figure>
+<p>在上传区选择
+GitHub图床，将需要上传的图片拖拽到上传区，图片就会自动上传到
+GitHub中相应的文件夹下</p>
+<p>最后将GitHub中图片链接的地址，替换为当前新的图片链接地址，这样图片就可以正常显示了（比如下面生成的头像）</p></li>
+</ol>
+<h1 id="问题">问题</h1>
+<h2 id="first">first</h2>
+<figure>
+<img
+src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/image-20240717102412686.png"
+alt="image-20240717102412686" />
+<figcaption aria-hidden="true">image-20240717102412686</figcaption>
+</figure>
+<p>解决：首先把<code>.deploy_git</code>包删了重新执行<code>npm install hexo-deployer-git</code>命令下载发布插件，然后再
+<code>hexo g &amp;&amp; hexo d</code></p>
+<h1 id="reference">Reference</h1>
+<p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/ingenuou_/article/details/107452638">删除github上的一个仓库或者仓库里面的某个文件_github仓库删除一个文件好麻烦-CSDN博客</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://blog.imzjw.cn/posts/b74f504f/index.html">https://blog.imzjw.cn/posts/b74f504f/index.html</a>
+<a
+target="_blank" rel="noopener" href="https://blog.csdn.net/JesseXW/article/details/135649752">https://blog.csdn.net/JesseXW/article/details/135649752</a>
+<a
+target="_blank" rel="noopener" href="https://akilar.top/posts/ebf20e02/">https://akilar.top/posts/ebf20e02/</a>
+<a
+target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1819036">https://cloud.tencent.com/developer/article/1819036</a>
+<a
+target="_blank" rel="noopener" href="https://hujiyi.github.io/2021/11/15/hexo-with-butterfly/index.html">https://hujiyi.github.io/2021/11/15/hexo-with-butterfly/index.html</a>
+<a
+target="_blank" rel="noopener" href="https://orientalglass.github.io/2023/08/22/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">https://orientalglass.github.io/2023/08/22/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</a>
+<a
+target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34243930/article/details/109046120">https://blog.csdn.net/qq_34243930/article/details/109046120</a>
+<a
+target="_blank" rel="noopener" href="https://butterfly.js.org/posts/4aa8abbe/">https://butterfly.js.org/posts/4aa8abbe/</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Emma</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/07/16/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">http://example.com/2024/07/16/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Emma</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/logo.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/22/DASCTF-2024-%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B-Crypto/" title="[DASCTF 2024 暑期挑战赛] Crypto"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">[DASCTF 2024 暑期挑战赛] Crypto</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/13/hello-world/" title="Hello World"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hello World</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/Emmaaaaaaaaaaaaaaaaa/blog-img/image/logo.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Emma</div><div class="author-info__description">总有人间一两风，填我十万八千梦！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Emmaaaaaaaaaaaaaaaaa" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:2592193853@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85git"><span class="toc-number">1.1.</span> <span class="toc-text">安装Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85node.js"><span class="toc-number">1.2.</span> <span class="toc-text">安装Node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEgithub%E4%BB%93%E5%BA%93"><span class="toc-number">1.3.</span> <span class="toc-text">配置Github仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEssh-key"><span class="toc-number">1.4.</span> <span class="toc-text">配置SSH Key</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEgithub%E8%B4%A6%E5%8F%B7%E4%BF%A1%E6%81%AF"><span class="toc-number">1.4.1.</span> <span class="toc-text">配置Github账号信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90shh-key"><span class="toc-number">1.4.2.</span> <span class="toc-text">生成SHH Key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0ssh-key"><span class="toc-number">1.4.3.</span> <span class="toc-text">添加SSH Key</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BB%BA%E7%AB%99"><span class="toc-number">2.</span> <span class="toc-text">建站</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85hexo"><span class="toc-number">2.1.</span> <span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.2.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%9B%B8%E5%85%B3%E4%BE%9D%E8%B5%96"><span class="toc-number">2.3.</span> <span class="toc-text">安装相关依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5"><span class="toc-number">2.4.</span> <span class="toc-text">生成静态网页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E9%A2%84%E8%A7%88"><span class="toc-number">2.5.</span> <span class="toc-text">打开本地服务器进行预览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E5%87%86%E5%A4%87"><span class="toc-number">2.5.1.</span> <span class="toc-text">运行准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE"><span class="toc-number">2.5.2.</span> <span class="toc-text">博客配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-number">2.5.3.</span> <span class="toc-text">安装插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-number">2.5.4.</span> <span class="toc-text">最后</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5-1"><span class="toc-number">3.1.</span> <span class="toc-text">生成静态网页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B9%B6%E9%A2%84%E8%A7%88%E7%BD%91%E7%AB%99"><span class="toc-number">3.2.</span> <span class="toc-text">启动本地服务器并预览网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6"><span class="toc-number">3.3.</span> <span class="toc-text">清除缓存文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0"><span class="toc-number">3.4.</span> <span class="toc-text">新建一篇文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%80%E7%AF%87%E5%B7%B2%E7%BB%8F%E5%8F%91%E5%B8%83%E7%9A%84%E6%96%87%E7%AB%A0"><span class="toc-number">3.5.</span> <span class="toc-text">删除一篇已经发布的文章</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%92%8C%E7%BE%8E%E5%8C%96bufferfly%E4%B8%BB%E9%A2%98"><span class="toc-number">4.</span> <span class="toc-text">安装和美化Bufferfly主题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">4.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%8E%E5%8C%96"><span class="toc-number">4.2.</span> <span class="toc-text">美化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%8D%9A%E5%AE%A2%E7%9A%84page"><span class="toc-number">4.2.1.</span> <span class="toc-text">添加博客的page</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E6%A0%87%E7%AD%BEtags%E9%A1%B5%E9%9D%A2"><span class="toc-number">4.2.1.1.</span> <span class="toc-text">新建标签tags页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E5%88%86%E7%B1%BBcategories%E9%A1%B5%E9%9D%A2"><span class="toc-number">4.2.1.2.</span> <span class="toc-text">新建分类categories页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E5%85%B3%E4%BA%8Eabout%E9%A1%B5%E9%9D%A2"><span class="toc-number">4.2.1.3.</span> <span class="toc-text">新建关于about页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E5%8F%8B%E9%93%BE-link-%E9%A1%B5%E9%9D%A2"><span class="toc-number">4.2.1.4.</span> <span class="toc-text">新建友链 link 页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%8F%8B%E9%93%BE%E5%86%85%E5%AE%B9"><span class="toc-number">4.2.1.5.</span> <span class="toc-text">创建友链内容</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98"><span class="toc-number">4.2.2.</span> <span class="toc-text">配置主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD"><span class="toc-number">4.2.3.</span> <span class="toc-text">搜索功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD"><span class="toc-number">4.2.4.</span> <span class="toc-text">字数统计功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gitalk%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">4.2.5.</span> <span class="toc-text">Gitalk评论功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE"><span class="toc-number">4.2.6.</span> <span class="toc-text">字体配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%A1%86"><span class="toc-number">4.2.7.</span> <span class="toc-text">代码框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E5%83%8F%E4%BF%AE%E6%94%B9"><span class="toc-number">4.2.8.</span> <span class="toc-text">头像修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A4%B4%E5%83%8F%E4%BF%AE%E6%94%B9"><span class="toc-number">4.2.9.</span> <span class="toc-text">浏览器头像修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E8%AE%BE%E7%BD%AE%E4%BF%AE%E6%94%B9"><span class="toc-number">4.2.10.</span> <span class="toc-text">背景设置修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BE%E4%BA%A4%E5%9B%BE%E6%A0%87"><span class="toc-number">4.2.11.</span> <span class="toc-text">社交图标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F"><span class="toc-number">4.2.12.</span> <span class="toc-text">字体大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E5%BA%A6%E4%BF%AE%E6%94%B9"><span class="toc-number">4.2.13.</span> <span class="toc-text">透明度修改</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#jsdelivr%E5%92%8Cgithub%E7%9A%84%E7%BB%93%E5%90%88"><span class="toc-number">5.</span> <span class="toc-text">jsdelivr和github的结合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#jsdelivr%E5%8A%A0%E9%80%9F"><span class="toc-number">5.1.</span> <span class="toc-text">jsdelivr加速</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8jsdelivr%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A"><span class="toc-number">5.2.</span> <span class="toc-text">利用jsdelivr搭建图床</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-number">6.</span> <span class="toc-text">问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#first"><span class="toc-number">6.1.</span> <span class="toc-text">first</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#reference"><span class="toc-number">7.</span> <span class="toc-text">Reference</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/28/DASCTF2024%E5%85%AB%E6%9C%88%E5%BC%80%E5%AD%A6%E5%AD%A3-Crypto/" title="[DASCTF2024八月开学季!] Crypto">[DASCTF2024八月开学季!] Crypto</a><time datetime="2024-08-28T09:10:38.000Z" title="发表于 2024-08-28 17:10:38">2024-08-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/28/%E7%BE%8A%E5%9F%8E%E6%9D%AF-2024-Crypto/" title="[羊城杯 2024] Crypto">[羊城杯 2024] Crypto</a><time datetime="2024-08-28T08:42:02.000Z" title="发表于 2024-08-28 16:42:02">2024-08-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/22/DASCTF-2024-%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B-Crypto/" title="[DASCTF 2024 暑期挑战赛] Crypto">[DASCTF 2024 暑期挑战赛] Crypto</a><time datetime="2024-07-22T05:55:49.000Z" title="发表于 2024-07-22 13:55:49">2024-07-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/16/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="博客搭建">博客搭建</a><time datetime="2024-07-16T13:14:48.000Z" title="发表于 2024-07-16 21:14:48">2024-07-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/13/hello-world/" title="Hello World">Hello World</a><time datetime="2024-07-13T13:29:29.066Z" title="发表于 2024-07-13 21:29:29">2024-07-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Emma</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: 'Ov23liLImJgwDM5LYl6o',
+      clientSecret: '0eada4946254414c31dd07b917cf8eb127b72d4c',
+      repo: 'blog_comments',
+      owner: 'Emmaaaaaaaaaaaaaaaaa',
+      admin: ['Emmaaaaaaaaaaaaaaaaa'],
+      id: 'c777c162e7be340c45ae45a31a4d8284',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !true) {
+    if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
